@@ -18,7 +18,7 @@ export default function Home() {
         formdata.append("file",selectedFile)
         
         try {
-           const response= await axios.post("https://convert-app-yjk9.vercel.app//convertfile",formdata,{
+           const response= await axios.post("https://convert-app-yjk9.vercel.app/convertfile",formdata,{
                 responseType:"blob",
             });
             const url=window.URL.createObjectURL(new Blob([response.data]))
