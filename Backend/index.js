@@ -13,7 +13,6 @@ const port = 3000
 const corsOptions = {
   origin: 'https://convert-app-seven.vercel.app', // Allow requests only from your frontend
   methods: ['GET', 'POST'],       // Specify allowed HTTP methods
-  allowedHeaders: ['Content-Type'], // Specify allowed headers
   credentials: true,              // Allow cookies if needed
 };
 module.exports = cors(corsOptions);
