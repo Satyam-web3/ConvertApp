@@ -16,7 +16,7 @@ const corsOptions = {
   allowedHeaders: ['Content-Type'], // Specify allowed headers
   credentials: true,              // Allow cookies if needed
 };
-
+module.exports = cors(corsOptions);
 app.use(cors(corsOptions));
 
 const storage = multer.diskStorage({
