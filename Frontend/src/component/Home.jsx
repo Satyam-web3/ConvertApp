@@ -26,7 +26,7 @@ export default function Home() {
             const link=document.createElement("a")
             
             link.href=url;
-            link.setAttribute("download",selectedFile.name.replace(/\.[^/.]+$/,true)+".pdf")
+            link.setAttribute("download",selectedFile.name.replace(/\.[^/.]+$/,"")+".pdf")
             document.body.appendChild(link)
             link.click()
             link.parentNode.removeChild(link)
