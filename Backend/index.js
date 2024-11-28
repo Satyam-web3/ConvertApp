@@ -9,7 +9,7 @@ const port = 3000
 
 
 
-
+app.use(cors());
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {

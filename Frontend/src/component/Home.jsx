@@ -22,12 +22,11 @@ export default function Home() {
                 responseType:"blob",
             });
             const url=window.URL.createObjectURL(new Blob([response.data]))
-            console.log(url)
+            
             const link=document.createElement("a")
-            console.log(link)
+            
             link.href=url;
-            console.log(link)
-            link.setAttribute("download",selectedFile.name.replace(/\.[^/.]+$/,"")+".pdf")
+            link.setAttribute("download",selectedFile.name.replace(/\.[^/.]+$/,true)+".pdf")
             document.body.appendChild(link)
             link.click()
             link.parentNode.removeChild(link)
@@ -39,9 +38,9 @@ export default function Home() {
     }
     return (
         <>
-            <div className='max-w-screnn-2xl mx-auto container px-6 md:px-40 '>
+            <div className='max-w-screnn-2xl mx-auto container px-6 md:px-40 bg-blue-200'>
                 <div className='flex h-screen items-center justify-center'>
-                    <div className='border-2 border-dashed px-4 py-2 md:px-8 md:py-8 border-indigo-400 rounded-lg shadow-lg'  >
+                    <div className='border-2 border-dashed px-4 py-2 md:px-8 md:py-8 border-indigo-400 rounded-lg shadow-lg bg-blue-400'  >
                         <h1 className='text-3xl font-bold text-center mb-4'>Convert Word to PDF</h1>
                         <p className='mb-5 text-center'>Easily convert your file from word doc to PDF</p>
 
@@ -51,13 +50,13 @@ export default function Home() {
                             onChange={handleFile} 
                             className='hidden' 
                             id='Fileinput' />
-                            <label htmlFor='Fileinput' className='w-full flex items-center justify-center px-4 py-6 bg-gray-100 text-gray-700 rounded-lg shadow-lg cursor-pointer border-blue-400 hover:bg-blue-600 duration-100'>
-                                <span className='text-2xl hover:text-white'>{selectedFile?selectedFile.name:"Choose File"}</span>
+                            <label htmlFor='Fileinput' className='w-full flex items-center justify-center px-4 py-6 bg-gray-100 text-gray-700 rounded-lg shadow-lg cursor-pointer border-blue-400 hover:bg-blue-800 duration-100 hover:text-white'>
+                                <span className='text-2xl '>{selectedFile?selectedFile.name:"Choose File"}</span>
                             </label>
                             <button 
                                 onClick={handleSubmit}
                                 disabled={!selectedFile} 
-                                className='text-white bg-blue-400 hover:bg-blue-600 duration-150 font-bold px-4 py-2 rounded-lg'>
+                                className='text-white bg-blue-400 hover:bg-blue-600 duration-150 font-bold px-4 py-2 rounded-lg disabled:bg-gray-400'>
                                 Convert
                             </button>
                         </div>

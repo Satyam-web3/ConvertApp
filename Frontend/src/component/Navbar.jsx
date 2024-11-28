@@ -3,7 +3,7 @@ import React from 'react'
 export default function Navbar() {
     return (
         <div>
-            <div>
+            <div className='bg-blue-600 shadow-lg'>
                 <div className='max-w-screnn-2xl mx-auto container px-6 md:px-40 shadow-lg py-4'>
 
 
