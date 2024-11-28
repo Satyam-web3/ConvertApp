@@ -10,6 +10,13 @@ const port = 3000
 
 
 app.use(cors());
+const corsOptions = {
+  origin: 'https://convert-app-yjk9.vercel.app/', // Allow requests only from your frontend
+  methods: ['GET', 'POST'],       // Specify allowed HTTP methods
+  allowedHeaders: ['Content-Type'], // Specify allowed headers
+  credentials: true,              // Allow cookies if needed
+};
+module.exports = cors(corsOptions);
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
