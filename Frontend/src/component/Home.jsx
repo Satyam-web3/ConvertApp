@@ -56,7 +56,7 @@ export default function Home() {
                             <button 
                                 onClick={handleSubmit}
                                 disabled={!selectedFile} 
-                                className='text-white bg-blue-400 hover:bg-blue-600 duration-150 font-bold px-4 py-2 rounded-lg disabled:bg-gray-400'>
+                                className=' bg-blue-100 hover:bg-blue-600 duration-150 font-bold px-4 py-2 rounded-lg disabled:bg-gray-400'>
                                 Convert
                             </button>
                         </div>
