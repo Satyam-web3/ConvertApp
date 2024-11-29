@@ -51,6 +51,9 @@ const storage = multer.diskStorage({
     }
   })
 
-app.listen(port, () => {
-  console.log(`Server is showing on port ${port}`)
-})
+  app.options('/convertfile', cors(corsOptions));
+
+  // Start the server
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
