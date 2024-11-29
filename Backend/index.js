@@ -15,7 +15,7 @@ const corsOptions = {
   methods: ['GET', 'POST'],       // Specify allowed HTTP methods
   credentials: true,              // Allow cookies if needed
 };
-// module.exports = cors(corsOptions);
+module.exports = cors(corsOptions);
 
 
 const storage = multer.diskStorage({
