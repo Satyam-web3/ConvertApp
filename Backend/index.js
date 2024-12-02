@@ -10,13 +10,7 @@ const port = 3000
 
 
 app.use(cors());
-const corsOptions = {
-  origin: ['https://convert-app-seven.vercel.app', 'http://localhost:3000'], // Allow requests only from your frontend
-  methods: ['GET', 'POST'],       // Specify allowed HTTP methods
-  credentials: true,              // Allow cookies if needed
-};
-app.use(cors(corsOptions));
-module.exports = cors(corsOptions);
+
 
 app.use((req, res, next) => {
   res.setHeader(
@@ -25,6 +19,16 @@ app.use((req, res, next) => {
   );
   next();
 }); 
+
+const corsOptions = {
+  origin: ['https://convert-app-seven.vercel.app', 'http://localhost:3000'], // Allow requests only from your frontend
+  methods: ['GET', 'POST'],       // Specify allowed HTTP methods
+  credentials: true,              // Allow cookies if needed
+};
+app.use(cors(corsOptions));
+module.exports = cors(corsOptions);
+
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
