@@ -20,10 +20,10 @@ module.exports = cors(corsOptions);
 app.use((req, res, next) => {
   res.setHeader(
     'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' https://vercel.live"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' https://vercel.live; connect-src 'self' https://vercel.live; img-src 'self' data:;"
   );
   next();
-});
+}); 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
