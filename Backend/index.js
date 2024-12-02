@@ -12,13 +12,7 @@ const port = 3000
 app.use(cors());
 
 
-app.use((req, res, next) => {
-  res.setHeader(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' https://vercel.live; connect-src 'self' https://vercel.live; img-src 'self' data:;"
-  );
-  next();
-}); 
+
 
 const corsOptions = {
   origin: ['https://convert-app-seven.vercel.app', 'http://localhost:3000'], // Allow requests only from your frontend
