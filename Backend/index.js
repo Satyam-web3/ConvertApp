@@ -9,7 +9,7 @@ const port = 3000
 
 
 
-// app.use(cors());
+app.use(cors());
 const corsOptions = {
   origin: ['https://convert-app-seven.vercel.app', 'http://localhost:3000'], // Allow requests only from your frontend
   methods: ['GET', 'POST'],       // Specify allowed HTTP methods
