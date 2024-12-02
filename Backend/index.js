@@ -15,7 +15,6 @@ const corsOptions = {
   methods: ['GET', 'POST'],       // Specify allowed HTTP methods
   credentials: true,              // Allow cookies if needed
 };
-module.exports = cors(corsOptions);
 
 app.use((req, res, next) => {
   res.setHeader(
