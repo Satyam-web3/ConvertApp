@@ -19,8 +19,8 @@ const corsOptions = {
   methods: ['GET', 'POST'],       // Specify allowed HTTP methods
   credentials: true,              // Allow cookies if needed
 };
-// app.use(cors(corsOptions));
-// module.exports = cors(corsOptions);
+app.use(cors(corsOptions));
+module.exports = cors(corsOptions);
 
 
 
