@@ -17,6 +17,13 @@ const corsOptions = {
 };
 module.exports = cors(corsOptions);
 
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self'; script-src 'self' https://vercel.live"
+  );
+  next();
+});
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
