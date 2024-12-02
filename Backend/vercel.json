@@ -21,9 +21,14 @@
           "value": "none"
         },
         {
+          "key": "x-vercel-live",
+          "value": "0"
+        },
+        {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://vercel.live; connect-src 'self'; style-src 'self';"        }
-      ]
+          "value": "default-src 'self'; script-src 'self' https://vercel.live https://vercel.live/_next-live/feedback; connect-src 'self'; style-src 'self'; img-src 'self' data:;"
+        }
+              ]
     }
   ]
   }
